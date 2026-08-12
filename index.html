@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 3 — Kanban Board</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="app-header">
+      <p class="eyebrow">Lab Activity 3 · Week 3</p>
+      <h1>Kanban Board</h1>
+      <p class="lede">
+        Add, move, edit, and delete task cards with vanilla JavaScript and the DOM.
+        No database — keep everything in a <code>state</code> array and re-render.
+      </p>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <label for="task-title">New task</label>
+      <div class="row">
+        <input id="task-title" name="title" type="text" placeholder="e.g. Wire the Delete button" required
+          autocomplete="off" />
+        <button type="submit">Add card</button>
+      </div>
+    </form>
+
+    <div id="board" class="board">
+      <section class="column" data-status="todo">
+        <header class="column-header">
+          <h2>To Do</h2>
+          <span class="count" data-count="todo">0</span>
+        </header>
+        <div class="column-body" data-column-body="todo">
+        </div>
+      </section>
+
+      <section class="column" data-status="doing">
+        <header class="column-header">
+          <h2>Doing</h2>
+          <span class="count" data-count="doing">0</span>
+        </header>
+        <div class="column-body" data-column-body="doing"></div>
+      </section>
+
+      <section class="column" data-status="done">
+        <header class="column-header">
+          <h2>Done</h2>
+          <span class="count" data-count="done">0</span>
+        </header>
+        <div class="column-body" data-column-body="done"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
